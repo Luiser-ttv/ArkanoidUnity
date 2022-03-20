@@ -32,7 +32,7 @@ public class DeadWall : MonoBehaviour
             DeadText.text = "You Lose\nPress Space to restart or esc to menu";
             if (Input.GetKey("space"))
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
             else if (Input.GetKey("escape"))
             {
