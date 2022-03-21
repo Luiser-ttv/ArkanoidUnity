@@ -18,19 +18,16 @@ public class Bricks : MonoBehaviour
             brickHP = brickHP - 1;
             points = points + 1;
 
+            int sceneCount = SceneManager.GetActiveScene().buildIndex;
 
-            if (points == 64)
+            if (brickHP == 2 && sceneCount == 1)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
 
-            if (brickHP == 2)
-            {
                 SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
                 renderer.color = new Color(0.754717f, 0.6325461f, 0.6325461f, 1f);
                 
             }
-            else if (brickHP == 1)
+            else if (brickHP == 1 && sceneCount == 1)
             {
                 SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
                 renderer.color = new Color(0f, 16f, 43f, 25f);
